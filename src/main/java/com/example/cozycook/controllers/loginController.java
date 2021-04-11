@@ -1,6 +1,6 @@
 package com.example.cozycook.controllers;
 
-// import com.example.wbdvsp2103salehisserverjava.models.User;
+import com.example.cozycook.models.User;
 
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;

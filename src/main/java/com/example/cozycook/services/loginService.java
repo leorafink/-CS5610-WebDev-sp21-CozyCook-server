@@ -1,10 +1,13 @@
 package com.example.cozycook.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.stereotype.Service;
 
 import java.net.URISyntaxException;
+import java.util.List;
 
 public class loginService {
 

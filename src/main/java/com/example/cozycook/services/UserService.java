@@ -16,7 +16,7 @@ public class UserService {
   @Autowired
   UserRepository repository;
 
-  public User createUser(Long uid, User user) {
+  public User createUser(User user) {
     /*
     Long id = (new Date()).getTime();
     widget.setId(id);
@@ -89,7 +89,7 @@ public class UserService {
     return 1;
   }
 
-  public List<User> findAllWidgets() {
+  public List<User> findAllUsers() {
     /*
     return widgets;
     */

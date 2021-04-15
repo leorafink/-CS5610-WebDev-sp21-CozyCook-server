@@ -51,4 +51,5 @@ public class UserController {
   public User findUserById(@PathVariable("uid") Long uid) {
     return service.findUserById(uid);
   }
+
 }

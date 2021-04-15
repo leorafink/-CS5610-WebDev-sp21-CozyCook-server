@@ -22,7 +22,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
           nativeQuery = true)
   public User findUserById(@Param("uid") Long userId);
 
-  @Query(value = "SELECT * FROM users WHERE username = :username",
-          nativeQuery = true)
-  public User findUserByUsername(@Param("username") String username);
+//  @Query(value = "SELECT * FROM users WHERE username = :username",
+//          nativeQuery = true)
+//  public User findUserByUsername(@Param("username") String username);
 }

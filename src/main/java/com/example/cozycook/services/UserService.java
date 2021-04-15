@@ -16,45 +16,32 @@ public class UserService {
   @Autowired
   UserRepository repository;
 
+  /*
+  Uses UserRepository to create a new entry in the users table from the given user object.
+   */
   public User createUser(User user) {
-    /*
-    Long id = (new Date()).getTime();
-    widget.setId(id);
-    widgets.add(widget);
-    return widget;
-    */
-
-    return repository.save(user);
+    return repository.save(user); // An insert.
   }
 
-  /*public List<User> findWidgetsForTopic(String tid) {
-    *//*
-    List<Widget> ws = new ArrayList<Widget>();
-    for (Widget w : widgets) {
-      if (w.getTopicId().equals(tid)) {
-        ws.add(w);
-      }
-    }
-    return ws;
-    *//*
+  /*
+  Uses UserRepository to find all entries in users table.
+   */
+  public List<User> findAllUsers() {
+    return repository.findAllUsers();
+  }
 
-    return repository.findWidgetsForTopic(tid);
-  }*/
+  /*
+  Uses UserRepository to find entry with the given id in users table.
+   */
+  public User findUserById(Long uid) {
+    return repository.findUserById(uid);
+  }
 
+  /*
+  Uses UserRepository to update an entry from users table by reassigning the entry with the given uid.
+   */
   public int updateUser(Long uid, User user) {
-    /*
-    for (int i = 0 ; i < widgets.size() ; i++) {
-      Widget w = widgets.get(i);
-      if (w.getId().equals(wid)) {
-        widgets.set(i, widget);
-        return 1;
-      }
-    }
-    return 0;
-    */
-
     User originalUser = findUserById(uid);
-
     if (user.getUsername() != null) {
       originalUser.setUsername(user.getUsername());
     }
@@ -64,51 +51,20 @@ public class UserService {
     if (user.getPassword() != null) {
       originalUser.setPassword(user.getPassword());
     }
-
-    repository.save(originalUser);
+    if (user.getType() != null) {
+      originalUser.setType(user.getType());
+    }
+    repository.save(originalUser); // An update.
     return 1;
   }
 
+  /*
+  Uses UserRepository to delete an entry from users table by its uid.
+  */
   public int deleteUser(Long uid) {
-    /*
-    int index = -1;
-    for (int i = 0; i < widgets.size(); i++) {
-      Widget w = widgets.get(i);
-      if (w.getId().equals(wid)) {
-        index = i;
-      }
-    }
-    if (index >= 0) {
-      widgets.remove(index);
-      return 1;
-    }
-    return 0;
-    */
-
     repository.deleteById(uid);
     return 1;
   }
 
-  public List<User> findAllUsers() {
-    /*
-    return widgets;
-    */
-    // return (List<Widget>)repository.findAll();
 
-    return repository.findAllUsers();
-  }
-
-  public User findUserById(Long uid) {
-    /*
-    for (Widget w : widgets) {
-      if (w.getId().equals(wid)) {
-        return w;
-      }
-    }
-    return null;
-    */
-    // return repository.findById(wid).get();
-
-    return repository.findUserById(uid);
-  }
 }

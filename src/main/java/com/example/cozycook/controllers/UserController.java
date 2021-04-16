@@ -5,8 +5,6 @@ import java.util.List;
 import com.example.cozycook.models.User;
 import com.example.cozycook.services.UserService;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +22,10 @@ public class UserController {
   @Autowired
   UserService service;
 
-  @PostMapping("/api/users")
-  public User createUser(@RequestBody User user) {
-    return this.service.createUser(user);
-  }
+//  @PostMapping("/api/users")
+//  public User createUser(@RequestBody User user) {
+//    return this.service.createUser(user);
+//  }
 
   @PutMapping("/api/users/{uid}")
   public int updateUser(@PathVariable("uid") Long uid,
@@ -40,7 +38,7 @@ public class UserController {
     return this.service.deleteUser(uid);
   }
 
-  @RequestMapping(value="/api/users", method=RequestMethod.GET)
+  @GetMapping("/api/users")
   public List<User> findAllUsers() {
     return this.service.findAllUsers();
   }

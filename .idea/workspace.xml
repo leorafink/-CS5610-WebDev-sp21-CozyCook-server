@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa1b0cf-051b-4821-8d7d-36649433632c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cozycook/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cozycook/controllers/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="faa1b0cf-051b-4821-8d7d-36649433632c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +68,7 @@
       <workItem from="1618495274271" duration="686000" />
       <workItem from="1618519007532" duration="10891000" />
       <workItem from="1618574980926" duration="4240000" />
-      <workItem from="1618608470952" duration="3261000" />
+      <workItem from="1618608470952" duration="3536000" />
     </task>
     <servers />
   </component>
@@ -154,7 +151,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/cozycook/controllers/UserController.java</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

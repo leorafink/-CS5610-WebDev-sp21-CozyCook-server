@@ -22,7 +22,7 @@ public class UserController {
   UserService service;
 
   @PostMapping("/api/users")
-  public User createWidget(@RequestBody User user) {
+  public User createUser(@RequestBody User user) {
     return service.createUser(user);
   }
 

@@ -20,21 +20,21 @@ public class UserService {
   Uses UserRepository to create a new entry in the users table from the given user object.
    */
   public User createUser(User user) {
-    return repository.save(user); // An insert.
+    return this.repository.save(user); // An insert.
   }
 
   /*
   Uses UserRepository to find all entries in users table.
    */
   public List<User> findAllUsers() {
-    return repository.findAllUsers();
+    return (List<User>) this.repository.findAllUsers();
   }
 
   /*
   Uses UserRepository to find entry with the given id in users table.
    */
   public User findUserById(Long uid) {
-    return repository.findUserById(uid);
+    return this.repository.findUserById(uid);
   }
 
   /*
@@ -54,7 +54,7 @@ public class UserService {
     if (user.getType() != null) {
       originalUser.setType(user.getType());
     }
-    repository.save(originalUser); // An update.
+    this.repository.save(originalUser); // An update.
     return 1;
   }
 
@@ -62,7 +62,7 @@ public class UserService {
   Uses UserRepository to delete an entry from users table by its uid.
   */
   public int deleteUser(Long uid) {
-    repository.deleteById(uid);
+    this.repository.deleteById(uid);
     return 1;
   }
 

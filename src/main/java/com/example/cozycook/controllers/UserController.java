@@ -23,28 +23,28 @@ public class UserController {
 
   @PostMapping("/api/users")
   public User createUser(@RequestBody User user) {
-    return service.createUser(user);
+    return this.service.createUser(user);
   }
 
   @PutMapping("/api/users/{uid}")
   public int updateUser(@PathVariable("uid") Long uid,
                         @RequestBody User user) {
-    return service.updateUser(uid, user);
+    return this.service.updateUser(uid, user);
   }
 
   @DeleteMapping("/api/users/{uid}")
   public int deleteUser(@PathVariable("uid") Long uid) {
-    return service.deleteUser(uid);
+    return this.service.deleteUser(uid);
   }
 
   @GetMapping("/api/users")
   public List<User> findAllUsers() {
-    return service.findAllUsers();
+    return this.service.findAllUsers();
   }
 
   @GetMapping("/api/users/{uid}")
   public User findUserById(@PathVariable("uid") Long uid) {
-    return service.findUserById(uid);
+    return this.service.findUserById(uid);
   }
 
 }

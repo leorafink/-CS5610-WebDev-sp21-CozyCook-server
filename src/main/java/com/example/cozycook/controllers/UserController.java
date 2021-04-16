@@ -16,16 +16,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
+
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin
 public class UserController {
   @Autowired
   UserService service;
 
-//  @PostMapping("/api/users")
-//  public User createUser(@RequestBody User user) {
-//    return this.service.createUser(user);
-//  }
+  @PostMapping("/api/users")
+  public User createUser(@RequestBody User user) {
+    return this.service.createUser(user);
+  }
 
   @PutMapping("/api/users/{uid}")
   public int updateUser(@PathVariable("uid") Long uid,

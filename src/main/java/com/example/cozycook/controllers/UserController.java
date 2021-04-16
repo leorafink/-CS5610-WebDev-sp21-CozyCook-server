@@ -26,11 +26,6 @@ public class UserController {
     return service.createUser(user);
   }
 
-  /*@GetMapping("/api/topics/{tid}/widgets")
-  public List<Widget> findWidgetsForTopic(@PathVariable("tid") String tid) {
-    return service.findWidgetsForTopic(tid);
-  }*/
-
   @PutMapping("/api/users/{uid}")
   public int updateUser(@PathVariable("uid") Long uid,
                         @RequestBody User user) {

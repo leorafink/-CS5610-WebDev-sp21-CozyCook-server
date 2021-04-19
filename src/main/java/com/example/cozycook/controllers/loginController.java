@@ -1,6 +1,7 @@
 package com.example.cozycook.controllers;
 
 import com.example.cozycook.models.User;
+import com.example.cozycook.services.UserService;
 
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 @CrossOrigin(origins = "*")
 public class loginController {
   List<User> users = new ArrayList<User>();
+  UserService userService;
+
 
   @GetMapping("/api/register/{username}/{password}")
   public User register(@PathVariable("username") String username,
@@ -20,8 +23,10 @@ public class loginController {
     User user = new User();
     user.setUsername(username);
     user.setPassword(password);
+    user.setType("GENERAL");
     session.setAttribute("currentUser", user);
-    users.add(user);
+    //users.add(user);
+    this.userService.createUser(user);
     return user;
   }
 

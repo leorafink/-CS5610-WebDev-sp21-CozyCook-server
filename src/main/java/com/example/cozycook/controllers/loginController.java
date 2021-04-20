@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class loginController {
   List<User> users = new ArrayList<User>();
   UserService userService;
+  HttpSession userSession;
 
 
   @GetMapping("/api/register/{username}/{password}")
@@ -32,8 +33,7 @@ public class loginController {
 
   @GetMapping("/api/profile")
   public User profile(HttpSession session) {
-    User currentUser = (User)
-            session.getAttribute("currentUser");
+    User currentUser = (User)this.userSession.getAttribute("currentUser");
     return currentUser;
   }
 
@@ -60,7 +60,7 @@ public class loginController {
   public String setSessionAttribute(@PathVariable("attr") String attr,
                                     @PathVariable("value") String value,
                                     HttpSession session) {
-    session.setAttribute(attr, value);
+    this.userSession.setAttribute(attr, value);
     return attr + " = " + value;
   }
 

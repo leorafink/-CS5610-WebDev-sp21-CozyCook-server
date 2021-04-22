@@ -15,38 +15,78 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.servlet.http.HttpSession;
 
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class UserController {
   @Autowired
   UserService service;
 
-  @PostMapping("/api/users")
-  public User createUser(@RequestBody User user) {
-    return this.service.createUser(user);
+
+  @PostMapping("/api/register")
+  public User register(@RequestBody User newUser, HttpSession session) {
+    User existingUser = service.findUserByUsername(newUser.getUsername());
+    if(existingUser == null) {
+      newUser = service.createUser(newUser);
+      session.setAttribute("profile", newUser);
+    }
+    return null;
   }
 
-  @PutMapping("/api/users/{uid}")
-  public int updateUser(@PathVariable("uid") Long uid,
-                        @RequestBody User user) {
-    return this.service.updateUser(uid, user);
+//  @PutMapping("/api/users/{uid}")
+//  public int updateUser(@PathVariable("uid") Long uid,
+//                        @RequestBody User user) {
+//    return this.service.updateUser(uid, user);
+//  }
+
+//  @DeleteMapping("/api/users/{uid}")
+//  public int deleteUser(@PathVariable("uid") Long uid) {
+//    return this.service.deleteUser(uid);
+//  }
+
+//  @GetMapping("/api/users")
+//  public List<User> findAllUsers() {
+//    return this.service.findAllUsers();
+//  }
+
+  @GetMapping("/api/profile")
+  public User privateProfile(HttpSession session) {
+    System.out.println("Current profile: " + session.getAttribute("profile"));
+    if (session.getAttribute("profile") != null) {
+      return (User) session.getAttribute("profile");
+    }
+    return null;
   }
 
-  @DeleteMapping("/api/users/{uid}")
-  public int deleteUser(@PathVariable("uid") Long uid) {
-    return this.service.deleteUser(uid);
+  @GetMapping("/api/profile/{userId}")
+  public User publicProfile(@PathVariable("userId") Long userId) {
+    return  service.findUserById(userId);
   }
 
-  @GetMapping("/api/users")
-  public List<User> findAllUsers() {
-    return this.service.findAllUsers();
+  @GetMapping("/api/users/{username}")
+  public User findUserByUsername(@PathVariable("username") String username) {
+    return service.findUserByUsername(username);
   }
 
-  @GetMapping("/api/users/{uid}")
-  public User findUserById(@PathVariable("uid") Long uid) {
-    return this.service.findUserById(uid);
+  @GetMapping("/api/users/{username}/{password}")
+  public User findUsernameByCredentials(@PathVariable("username") String username, @PathVariable("password") String password) {
+    return service.findUserByCredentials(username, password);
+  }
+
+  @PostMapping("/api/login")
+  public User login(@RequestBody User credentials, HttpSession session) throws Exception {
+    User existingUser = service.findUserByCredentials(credentials.getUsername(), credentials.getPassword());
+    System.out.println("existing user should be null" + existingUser);
+    if (existingUser != null) {
+      session.setAttribute("profile", existingUser);
+      System.out.println("Current profile in login: " + session.getAttribute("profile"));
+      return existingUser;
+//    } else {
+//      throw new Error("user profile does not exist");
+    }
+    return null;
   }
 
 }

@@ -14,16 +14,45 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  private String email;
+  private String firstName;
+  private String lastName;
   private String username;
   private String password;
-  private String type;
+  private String role;
 
-  public String getType() {
-    return type;
+
+
+  public String getEmail() {
+    return email;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String type) {
+    this.role = type;
   }
 
   public String getUsername() {

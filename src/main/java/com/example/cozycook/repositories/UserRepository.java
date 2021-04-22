@@ -14,13 +14,11 @@ public interface UserRepository extends CrudRepository<User, Long> {
           nativeQuery = true)
   public List<User> findWidgetsForTopic(@Param("tid") String topicId);*/
 
-  @Query(value = "SELECT * FROM users",
-          nativeQuery = true)
-  public List<User> findAllUsers();
+  @Query(value="SELECT * FROM users WHERE username=:username", nativeQuery = true)
+  public User findUserByUsername(@Param("username") String username);
 
-  @Query(value = "SELECT * FROM users WHERE id = :uid",
-          nativeQuery = true)
-  public User findUserById(@Param("uid") Long userId);
+  @Query(value="SELECT * FROM users WHERE username=:username and password=:password", nativeQuery = true)
+  public User findUserByCredentials(@Param("username") String username, @Param("password") String password);
 
 //  @Query(value = "SELECT * FROM users WHERE username = :username",
 //          nativeQuery = true)

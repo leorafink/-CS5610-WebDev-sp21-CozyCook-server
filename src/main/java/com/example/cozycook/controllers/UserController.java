@@ -90,4 +90,27 @@ public class UserController {
     return null;
   }
 
+  @GetMapping("/api/session")
+  public User getSession(HttpSession session) {
+    System.out.println((User)session.getAttribute("profile"));
+    return (User)session.getAttribute("profile");
+  }
+
+  @GetMapping("/api/logout")
+  public void logout(HttpSession session) {
+    session.invalidate();
+  }
+
+  @PutMapping("/api/users/{userId}")
+  public void updateUser(@PathVariable("userId") Long userId, @RequestBody User user/*, HttpSession session*/) {
+    /*User existingUser = service.findUserByUsername(user.getUsername());
+    existingUser.setPassword(user.getPassword());
+    existingUser.setEmail(user.getEmail());
+    existingUser.setRole(user.getRole());
+    session.setAttribute("profile", existingUser);
+    return existingUser;*/
+    Long id = (Long)userId;
+    this.service.updateUser(id, user);
+  }
+
 }

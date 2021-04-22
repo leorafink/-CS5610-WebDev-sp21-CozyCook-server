@@ -31,6 +31,7 @@ public class UserController {
     if(existingUser == null) {
       newUser = service.createUser(newUser);
       session.setAttribute("profile", newUser);
+      return newUser;
     }
     return null;
   }

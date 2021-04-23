@@ -36,6 +36,11 @@ public class UserController {
     return null;
   }
 
+  @GetMapping("/api/home/mostRecentUser")
+  public User findMostRecentUser() {
+    return service.findMostRecentUser();
+  }
+
 //  @PutMapping("/api/users/{uid}")
 //  public int updateUser(@PathVariable("uid") Long uid,
 //                        @RequestBody User user) {

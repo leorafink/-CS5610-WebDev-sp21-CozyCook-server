@@ -39,7 +39,8 @@ public class RecipeController {
   }
 
   @GetMapping("/api/users/{userId}/recipes")
-  public List<Recipe> findAllRecipeForUser(@PathVariable("userId") Long userId) {
+  public List<Recipe> findAllRecipesForUser(@PathVariable("userId") Long userId) {
+    System.out.println("userId in server recipe controller is: " + userId);
     return this.service.findAllRecipesForUser(userId);
   }
 

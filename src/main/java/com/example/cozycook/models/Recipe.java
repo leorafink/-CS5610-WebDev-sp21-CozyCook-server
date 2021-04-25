@@ -18,6 +18,16 @@ public class Recipe {
   private String link;
   private String name;
   private Long userId;
+  private String originalId;
+
+  public String getOriginalId() {
+    return originalId;
+  }
+
+  public void setOriginalId(String originalId) {
+    this.originalId = originalId;
+  }
+
 
   public Long getUserId() {
     return userId;

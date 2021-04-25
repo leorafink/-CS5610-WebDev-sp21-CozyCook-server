@@ -33,8 +33,9 @@ public class RecipeController {
           @PathVariable("userId") Long userId,
           @RequestBody Recipe recipe) {
     System.out.println("userId is: " + userId);
-    System.out.println("recipe is: " + recipe);
+    System.out.println("recipe's original ID is: " + recipe.getOriginalId());
     recipe.setUserId(userId);
+    System.out.println("afte added t daatbase: " + service.createRecipeForUser(recipe).getOriginalId());
     return service.createRecipeForUser(recipe);
   }
 

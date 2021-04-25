@@ -45,8 +45,9 @@ public class RecipeController {
     return this.service.findAllRecipesForUser(userId);
   }
 
-  @DeleteMapping("/api/users/{userId}/recipes/{recipeId")
-  public int deleteUser(@PathVariable("recipeId") Long recipeId) {
+  @DeleteMapping("/api/users/{userId}/recipes/{recipeId}")
+  public int deleteRecipe(@PathVariable("recipeId") Long recipeId) {
+    System.out.println("recipe id being deleted: " + drecipeId);
     this.service.deleteRecipe(recipeId);
     return 1;
   }

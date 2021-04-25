@@ -51,8 +51,8 @@ public class RecipeService {
   /*
   Uses RecipeRepository to delete an entry from recipes table by its id.
   */
-  public int deleteRecipe(Long id) {
-    this.repository.deleteById(id);
+  public int deleteRecipe(Long recipeId) {
+    this.repository.deleteById(recipeId);
     return 1;
   }
 

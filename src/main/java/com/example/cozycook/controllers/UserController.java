@@ -47,10 +47,10 @@ public class UserController {
 //    return this.service.updateUser(uid, user);
 //  }
 
-//  @DeleteMapping("/api/users/{uid}")
-//  public int deleteUser(@PathVariable("uid") Long uid) {
-//    return this.service.deleteUser(uid);
-//  }
+@DeleteMapping("/api/users/{uid}")
+public int deleteUser(@PathVariable("uid") Long uid) {
+  return this.service.deleteUser(uid);
+}
 
 @GetMapping("/api/users")
 public List<User> findAllUsers() {

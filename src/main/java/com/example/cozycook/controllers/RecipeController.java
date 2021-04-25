@@ -27,7 +27,6 @@ public class RecipeController {
   @Autowired
   RecipeService service;
 
-
   @PostMapping("/api/users/{userId}/recipes")
   public Recipe createRecipeForUser(
           @PathVariable("userId") Long userId,
@@ -47,7 +46,7 @@ public class RecipeController {
 
   @DeleteMapping("/api/users/{userId}/recipes/{recipeId}")
   public int deleteRecipe(@PathVariable("recipeId") Long recipeId) {
-    System.out.println("recipe id being deleted: " + drecipeId);
+    System.out.println("recipe id being deleted: " + recipeId);
     this.service.deleteRecipe(recipeId);
     return 1;
   }
@@ -61,5 +60,10 @@ public class RecipeController {
   public void updateRecipe(@PathVariable("recipeId") Long recipeId, @RequestBody Recipe recipe) {
     Long id = (Long)recipeId;
     this.service.updateRecipe(id, recipe);
+  }
+
+  @GetMapping("/api/users/{userId}/mostRecentRecipe")
+  public Recipe findMostRecentRecipe(@PathVariable("userId") Long userId) {
+    return service.findMostRecentRecipe(userId);
   }
 }

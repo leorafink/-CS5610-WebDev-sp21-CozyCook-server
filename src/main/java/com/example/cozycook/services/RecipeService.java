@@ -60,5 +60,7 @@ public class RecipeService {
     return this.repository.findAllRecipesForUser(userId);
   }
 
-
+  public Recipe findMostRecentRecipe(Long userId) {
+    return this.repository.findMostRecentRecipe(userId);
+  }
 }

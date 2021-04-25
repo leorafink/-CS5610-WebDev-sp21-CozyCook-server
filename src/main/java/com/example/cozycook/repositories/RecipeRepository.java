@@ -13,4 +13,6 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
   @Query(value="SELECT * FROM recipes WHERE user_id=:uid", nativeQuery = true)
   public List<Recipe> findAllRecipesForUser(@Param("uid")Long userId);
 
+  @Query(value="SELECT * FROM recipes WHERE user_id=:uid ORDER BY id DESC LIMIT 1", nativeQuery = true)
+  public Recipe findMostRecentRecipe(@Param("uid") Long userId);
 }

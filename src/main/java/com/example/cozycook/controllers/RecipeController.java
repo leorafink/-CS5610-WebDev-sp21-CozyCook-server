@@ -53,7 +53,7 @@ public class RecipeController {
 
   @GetMapping("/api/users/{userId}/recipes/{recipeId}")
   public Recipe findRecipeById(@PathVariable("recipeId") Long recipeId) {
-    return service.findRecipeById(recipeId);
+    return this.service.findRecipeById(recipeId);
   }
 
   @PutMapping("/api/users/{userId}/recipes/{recipeId}")
@@ -64,6 +64,11 @@ public class RecipeController {
 
   @GetMapping("/api/users/{userId}/mostRecentRecipe")
   public Recipe findMostRecentRecipe(@PathVariable("userId") Long userId) {
-    return service.findMostRecentRecipe(userId);
+    return this.service.findMostRecentRecipe(userId);
+  }
+
+  @GetMapping("/api/recipes/{recipeId}")
+  public List<User> findUsersWhoLikeThisRecipe(@PathVariable("recipeId") Long recipeId) {
+    return this.service.findUsersWhoLikeThisRecipe(recipeId);
   }
 }

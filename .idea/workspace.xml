@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cozycook/repositories/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cozycook/repositories/RecipeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cozycook/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cozycook/services/RecipeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -99,11 +100,46 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1614" height="190" key="GridCell.Tab.0.bottom" timestamp="1619382165359">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.0.bottom/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165359" />
+    <state width="1614" height="190" key="GridCell.Tab.0.center" timestamp="1619382165358">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.0.center/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165358" />
+    <state width="1614" height="190" key="GridCell.Tab.0.left" timestamp="1619382165357">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.0.left/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165357" />
+    <state width="1614" height="190" key="GridCell.Tab.0.right" timestamp="1619382165358">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.0.right/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165358" />
+    <state width="1614" height="190" key="GridCell.Tab.1.bottom" timestamp="1619382165360">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.1.bottom/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165360" />
+    <state width="1614" height="190" key="GridCell.Tab.1.center" timestamp="1619382165359">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.1.center/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165359" />
+    <state width="1614" height="190" key="GridCell.Tab.1.left" timestamp="1619382165359">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.1.left/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165359" />
+    <state width="1614" height="190" key="GridCell.Tab.1.right" timestamp="1619382165359">
+      <screen x="0" y="25" width="1680" height="1025" />
+    </state>
+    <state width="1614" height="190" key="GridCell.Tab.1.right/0.25.1680.1025@0.25.1680.1025" timestamp="1619382165359" />
   </component>
 </project>

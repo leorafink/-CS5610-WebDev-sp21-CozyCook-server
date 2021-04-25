@@ -1,6 +1,9 @@
 package com.example.cozycook.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -20,9 +23,11 @@ public class User {
   private String username;
   private String password;
   private String role;
+
+  @OneToMany(targetEntity = Recipe.class)
+  private List<Recipe> recipes;
+
   //private RecipeTable recipeTable;
-
-
 
   public String getEmail() {
     return email;
@@ -78,6 +83,14 @@ public class User {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public List<Recipe> getRecipes() {
+    return recipes;
+  }
+
+  public void setRecipes(List<Recipe> recipes) {
+    this.recipes = recipes;
   }
 }
 

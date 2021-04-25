@@ -52,10 +52,10 @@ public class UserController {
 //    return this.service.deleteUser(uid);
 //  }
 
-//  @GetMapping("/api/users")
-//  public List<User> findAllUsers() {
-//    return this.service.findAllUsers();
-//  }
+@GetMapping("/api/users")
+public List<User> findAllUsers() {
+    return this.service.findAllUsers();
+}
 
   @GetMapping("/api/profile")
   public User privateProfile(HttpSession session) {

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpSession;
 
 
@@ -31,6 +32,8 @@ public class RecipeController {
   public Recipe createRecipeForUser(
           @PathVariable("userId") Long userId,
           @RequestBody Recipe recipe) {
+    System.out.println("userId is: " + userId);
+    System.out.println("recipe is: " + recipe);
     recipe.setUserId(userId);
     return service.createRecipeForUser(recipe);
   }

@@ -84,12 +84,12 @@ public List<User> findAllUsers() {
   }
 
   @PostMapping("/api/login")
-  public User login(@RequestBody User credentials, HttpSession session) throws Exception {
+  public HttpSession login(@RequestBody User credentials, HttpSession session) throws Exception {
     User existingUser = service.findUserByCredentials(credentials.getUsername(), credentials.getPassword());
     if (existingUser != null) {
       session.setAttribute("profile", existingUser);
-      System.out.println(session.getId());
-      return existingUser;
+      return session;
+      //return existingUser;
     }
     return null;
   }

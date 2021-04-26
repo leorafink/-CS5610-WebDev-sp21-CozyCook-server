@@ -42,11 +42,10 @@ public class UserController {
     return service.findMostRecentUser();
   }
 
-//  @PutMapping("/api/users/{uid}")
-//  public int updateUser(@PathVariable("uid") Long uid,
-//                        @RequestBody User user) {
-//    return this.service.updateUser(uid, user);
-//  }
+@PutMapping("/api/users/{uid}")
+public int updateUser(@PathVariable("uid") Long uid, @RequestBody User user) {
+  return this.service.updateUser(uid, user);
+}
 
 @DeleteMapping("/api/users/{uid}")
 public int deleteUser(@PathVariable("uid") Long uid) {
@@ -104,16 +103,16 @@ public List<User> findAllUsers() {
     session.invalidate();
   }
 
-  @PutMapping("/api/users/{userId}")
-  public void updateUser(@PathVariable("userId") Long userId, @RequestBody User user/*, HttpSession session*/) {
-    /*User existingUser = service.findUserByUsername(user.getUsername());
+  /*@PutMapping("/api/users/{userId}")
+  public void updateUser(@PathVariable("userId") Long userId, @RequestBody User user*//*, HttpSession session*//*) {
+    *//*User existingUser = service.findUserByUsername(user.getUsername());
     existingUser.setPassword(user.getPassword());
     existingUser.setEmail(user.getEmail());
     existingUser.setRole(user.getRole());
     session.setAttribute("profile", existingUser);
-    return existingUser;*/
+    return existingUser;*//*
     Long id = (Long)userId;
     this.service.updateUser(id, user);
-  }
+  }*/
 
 }

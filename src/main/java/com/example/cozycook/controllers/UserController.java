@@ -73,8 +73,9 @@ public List<User> findAllUsers() {
 
   @GetMapping("/api/users/{username}")
   public User findUserByUsername(@PathVariable("username") String username) {
-    return service.findUserByUsername(username);
+      return service.findUserByUsername(username);
   }
+
 
   @GetMapping("/api/users/{username}/{password}")
   public User findUsernameByCredentials(@PathVariable("username") String username, @PathVariable("password") String password) {
@@ -84,10 +85,8 @@ public List<User> findAllUsers() {
   @PostMapping("/api/login")
   public User login(@RequestBody User credentials, HttpSession session) throws Exception {
     User existingUser = service.findUserByCredentials(credentials.getUsername(), credentials.getPassword());
-    System.out.println("existing user should be null" + existingUser);
     if (existingUser != null) {
       session.setAttribute("profile", existingUser);
-      System.out.println("Current profile in login: " + session.getAttribute("profile"));
       return existingUser;
 //    } else {
 //      throw new Error("user profile does not exist");

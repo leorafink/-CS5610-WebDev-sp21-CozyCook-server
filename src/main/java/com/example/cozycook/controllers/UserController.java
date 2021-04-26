@@ -88,9 +88,8 @@ public List<User> findAllUsers() {
     User existingUser = service.findUserByCredentials(credentials.getUsername(), credentials.getPassword());
     if (existingUser != null) {
       session.setAttribute("profile", existingUser);
+      System.out.println(session.getId());
       return existingUser;
-//    } else {
-//      throw new Error("user profile does not exist");
     }
     return null;
   }

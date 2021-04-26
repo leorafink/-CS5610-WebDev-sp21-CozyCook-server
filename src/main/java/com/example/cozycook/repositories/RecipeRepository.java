@@ -17,8 +17,8 @@ public interface RecipeRepository extends CrudRepository<Recipe, Long> {
   @Query(value="SELECT * FROM recipes WHERE user_id=:uid ORDER BY id DESC LIMIT 1", nativeQuery = true)
   public Recipe findMostRecentRecipe(@Param("uid") Long userId);
 
-  @Query(value="SELECT users.* FROM users, recipes WHERE recipes.user_id=users.id AND recipes.id=:recipeId", nativeQuery = true)
-  public List<User> findUsersWhoLikeThisRecipe(@Param("recipeId") Long recipeId);
+  @Query(value="SELECT username FROM users, recipes WHERE recipes.user_id=users.id AND recipes.original_id=:recipeId", nativeQuery = true)
+  public List<String> findUsersWhoLikeThisRecipe(@Param("recipeId") String recipeId);
 
  // @Query(value="SELECT users.username FROM users, recipes WHERE recipes.user_id=users.id AND recipes.id=:recipeId")
 

@@ -68,7 +68,10 @@ public class RecipeController {
   }
 
   @GetMapping("/api/recipes/{recipeId}")
-  public List<User> findUsersWhoLikeThisRecipe(@PathVariable("recipeId") Long recipeId) {
+  public List<String> findUsersWhoLikeThisRecipe(@PathVariable("recipeId") String recipeId) {
+    System.out.println("recipeId: " + recipeId);
+    System.out.println(this.service.findUsersWhoLikeThisRecipe(recipeId));
     return this.service.findUsersWhoLikeThisRecipe(recipeId);
+
   }
 }

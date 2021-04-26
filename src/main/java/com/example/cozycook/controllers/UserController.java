@@ -20,8 +20,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 // Local: @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
-// "http://cs5610-charlotteswebdev-client.herokuapp.com"
-@CrossOrigin(origins = "*", allowCredentials = "true")
+@CrossOrigin(origins = "http://cs5610-charlotteswebdev-client.herokuapp.com", allowCredentials = "true")
 public class UserController {
   @Autowired
   UserService service;
@@ -85,12 +84,11 @@ public List<User> findAllUsers() {
   }
 
   @PostMapping("/api/login")
-  public HttpSession login(@RequestBody User credentials, HttpSession session) throws Exception {
+  public User login(@RequestBody User credentials, HttpSession session) throws Exception {
     User existingUser = service.findUserByCredentials(credentials.getUsername(), credentials.getPassword());
     if (existingUser != null) {
       session.setAttribute("profile", existingUser);
-      return session;
-      //return existingUser;
+      return existingUser;
     }
     return null;
   }

@@ -37,6 +37,16 @@ public class UserController {
     return null;
   }
 
+  @PostMapping("/api/create")
+  public User create(@RequestBody User newUser) {
+    User existingUser = service.findUserByUsername(newUser.getUsername());
+    if(existingUser == null) {
+      newUser = service.createUser(newUser);
+      return newUser;
+    }
+    return null;
+  }
+
   @GetMapping("/api/home/mostRecentUser")
   public User findMostRecentUser() {
     return service.findMostRecentUser();

@@ -22,8 +22,8 @@ import javax.servlet.http.HttpSession;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
-// Remote: @CrossOrigin(origins = "http://cs5610-charlotteswebdev-client.herokuapp.com", allowCredentials = "true")
+//local: @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = "http://cs5610-charlotteswebdev-client.herokuapp.com", allowCredentials = "true")
 public class RecipeController {
   @Autowired
   RecipeService service;
